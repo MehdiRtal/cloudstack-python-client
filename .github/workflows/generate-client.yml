@@ -12,6 +12,8 @@ jobs:
       - name: Generate
         uses: MehdiRtal/openapi-python-client-action@v2
         with:
-          extra-args: "--output-path=./ --overwrite"
+          extra-args: 
+            - "--output-path=./"
+            - "--overwrite"
       - name: Push
         uses: stefanzweifel/git-auto-commit-action@v6
