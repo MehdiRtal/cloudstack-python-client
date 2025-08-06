@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Generate
-        uses: MehdiRtal/openapi-python-client-action@v2
+        uses: MehdiRtal/openapi-python-client-action@994633aa75b82e6b89949c0ae515b426ab5947b8
         with:
           extra-args: 
             - "--output-path=./"
