@@ -12,6 +12,6 @@ jobs:
       - name: Generate
         uses: openapi-generators/openapi-python-client-action@v2
         with:
-          extra-args: --meta uv --overwrite
+          extra-args: --meta=uv --overwrite
       - name: Push
         uses: stefanzweifel/git-auto-commit-action@v6
