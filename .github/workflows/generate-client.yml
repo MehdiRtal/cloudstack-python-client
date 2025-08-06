@@ -1,23 +1,17 @@
 on:
   push:
   workflow_dispatch:
-
 jobs:
   generate-client:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Generate client
-        uses: openapi-generators/openapitools-generator-action@v1.5.0
+      - name: Generate
+        uses: openapi-generators/openapi-python-client-action@v2
         with:
-          generator: python-pydantic-v1
-          config-file: config.yaml
-          template-dir: templates
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: client
-          path: python-pydantic-v1-client
+          extra-args: "--meta=uv --overwrite"
+      - name: Push
+        uses: stefanzweifel/git-auto-commit-action@v6
