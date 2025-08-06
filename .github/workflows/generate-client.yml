@@ -12,7 +12,6 @@ jobs:
       - name: Generate
         uses: openapi-generators/openapi-python-client-action@v2
         with:
-          openapi-python-client-version: '0.25.3'
-          extra-args: '--help'
+          extra-args: "--output-path ./ --overwrite"
       - name: Push
         uses: stefanzweifel/git-auto-commit-action@v6
